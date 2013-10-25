@@ -7,25 +7,29 @@ module.exports = (grunt)->
         files: 'ddd.min.js': ['ddd.js']
 
     concat:
-      typesc:
+      dest:
         src: ['src/**/*.js']
         dest: 'ddd.js'
+
+      test:
+        src: ['ddd.js', 'tests/**/*.js']
+        dest: 'ddd-test.js'
 
       options:
         separator: ';'
 
     typescript:
       base:
-        src: ['src/**/*.ts']
+        src: ['src/**/*.ts', 'tests/**/*.ts']
 
     watch:
       ts:
-        files: ['src/**/*.ts']
+        files: ['src/**/*.ts', 'tests/**/*.ts']
         tasks: ['typescript', 'concat', 'uglify', 'clean']
         options:
           atBegin: true
 
-    clean: ['src/**/*.js']
+    clean: ['src/**/*.js', 'tests/**/*.js']
 
   })
 
