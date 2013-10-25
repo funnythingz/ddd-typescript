@@ -33,7 +33,6 @@ module.exports = (grunt)->
   grunt.loadNpmTasks('grunt-contrib-concat')
   grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.loadNpmTasks('grunt-contrib-watch')
-  grunt.loadNpmTasks('grunt-contrib-copy')
   grunt.loadNpmTasks('grunt-contrib-clean')
 
   grunt.registerTask('default', ['typescript', 'concat', 'uglify', 'clean'])
