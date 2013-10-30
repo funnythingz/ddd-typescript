@@ -2,7 +2,7 @@
 
 module DDD {
 
-    export class Entity {
+    export class Entity implements IEntity {
 
         constructor(
             private identity: Identity<any>
