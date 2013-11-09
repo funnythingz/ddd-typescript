@@ -9,10 +9,7 @@ var DDD;
         };
 
         Entity.prototype.equals = function (other) {
-            if (this.getIdentity() === other.getIdentity()) {
-                return true;
-            }
-            return false;
+            return this.getIdentity() === other.getIdentity();
         };
         return Entity;
     })();
