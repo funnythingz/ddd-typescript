@@ -2,7 +2,7 @@
 
 module DDD {
 
-    export class Identity<T> {
+    export class Identity<T> implements IIdentity {
 
         constructor(
             private value: T
