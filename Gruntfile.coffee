@@ -18,25 +18,27 @@ module.exports = (grunt)->
       options:
         separator: ';'
 
-    typescript:
+    ts:
       base:
         src: ['src/**/*.ts', 'tests/**/*.ts']
+        options:
+          sourceMap: false
 
     watch:
       ts:
         files: ['src/**/*.ts', 'tests/**/*.ts']
-        tasks: ['typescript', 'concat', 'uglify', 'clean']
+        tasks: ['ts', 'concat', 'uglify', 'clean']
         options:
           atBegin: true
 
-    clean: ['src/**/*.js', 'tests/**/*.js']
+    clean: ['src/**/*.js', 'tests/**/*.js', 'tscommand.tmp.txt']
 
   })
 
-  grunt.loadNpmTasks('grunt-typescript')
+  grunt.loadNpmTasks('grunt-ts')
   grunt.loadNpmTasks('grunt-contrib-concat')
   grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-contrib-clean')
 
-  grunt.registerTask('default', ['typescript', 'concat', 'uglify', 'clean'])
+  grunt.registerTask('default', ['ts', 'concat', 'uglify', 'clean'])
