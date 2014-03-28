@@ -32,7 +32,7 @@
     })();
     DDD.Identity = Identity;
 })(DDD || (DDD = {}));
-;;var DDD;
+;var DDD;
 (function (DDD) {
     var expect = chai.expect;
 
