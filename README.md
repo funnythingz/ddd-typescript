@@ -1,4 +1,3 @@
-study-ddd-typescript
-====================
+# ddd-typescript
 
-I study Domain-Driven Design.
+Domain-Driven Design.
