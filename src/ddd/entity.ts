@@ -1,4 +1,5 @@
 /// <reference path="identity.ts" />
+/// <reference path="entity-interface.ts" />
 
 module DDD {
 
