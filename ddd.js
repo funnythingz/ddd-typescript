@@ -1,4 +1,17 @@
-;var DDD;
+var DDD;
+(function (DDD) {
+    var Identity = (function () {
+        function Identity(value) {
+            this.value = value;
+        }
+        Identity.prototype.getValue = function () {
+            return this.value;
+        };
+        return Identity;
+    })();
+    DDD.Identity = Identity;
+})(DDD || (DDD = {}));
+var DDD;
 (function (DDD) {
     var Entity = (function () {
         function Entity(identity) {
@@ -15,16 +28,4 @@
     })();
     DDD.Entity = Entity;
 })(DDD || (DDD = {}));
-;;var DDD;
-(function (DDD) {
-    var Identity = (function () {
-        function Identity(value) {
-            this.value = value;
-        }
-        Identity.prototype.getValue = function () {
-            return this.value;
-        };
-        return Identity;
-    })();
-    DDD.Identity = Identity;
-})(DDD || (DDD = {}));
+//# sourceMappingURL=ddd.js.map

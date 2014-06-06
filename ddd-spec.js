@@ -1,4 +1,17 @@
-;var DDD;
+﻿var DDD;
+(function (DDD) {
+    var Identity = (function () {
+        function Identity(value) {
+            this.value = value;
+        }
+        Identity.prototype.getValue = function () {
+            return this.value;
+        };
+        return Identity;
+    })();
+    DDD.Identity = Identity;
+})(DDD || (DDD = {}));
+var DDD;
 (function (DDD) {
     var Entity = (function () {
         function Entity(identity) {
@@ -15,20 +28,7 @@
     })();
     DDD.Entity = Entity;
 })(DDD || (DDD = {}));
-;;var DDD;
-(function (DDD) {
-    var Identity = (function () {
-        function Identity(value) {
-            this.value = value;
-        }
-        Identity.prototype.getValue = function () {
-            return this.value;
-        };
-        return Identity;
-    })();
-    DDD.Identity = Identity;
-})(DDD || (DDD = {}));
-;var DDD;
+var DDD;
 (function (DDD) {
     var expect = chai.expect;
 
@@ -52,7 +52,7 @@
         });
     });
 })(DDD || (DDD = {}));
-;var DDD;
+var DDD;
 (function (DDD) {
     var expect = chai.expect;
 
@@ -63,7 +63,7 @@
         });
     });
 })(DDD || (DDD = {}));
-;var __extends = this.__extends || function (d, b) {
+var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
@@ -111,3 +111,4 @@ var DDD;
         });
     });
 })(DDD || (DDD = {}));
+//# sourceMappingURL=ddd-spec.js.map
