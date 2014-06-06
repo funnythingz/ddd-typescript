@@ -1,4 +1,4 @@
 {
   "framework" : "mocha+chai",
-  "src_files" : ["ddd-test.js"]
+  "src_files" : ["ddd.js", "ddd-spec.js"]
 }
