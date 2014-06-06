@@ -22,10 +22,6 @@
             this.value = value;
         }
         Identity.prototype.getValue = function () {
-            return this.value.toString();
-        };
-
-        Identity.prototype.getIdentity = function () {
             return this.value;
         };
         return Identity;
@@ -37,22 +33,22 @@
     var expect = chai.expect;
 
     describe("Entity", function () {
-        var id_1 = new DDD.Identity(1);
-        var id_2 = new DDD.Identity(2);
+        var id1 = new DDD.Identity('id1');
+        var id2 = new DDD.Identity('id2');
 
-        var entity_1 = new DDD.Entity(id_1);
-        var entity_2 = new DDD.Entity(id_2);
+        var entity1 = new DDD.Entity(id1);
+        var entity2 = new DDD.Entity(id2);
 
-        it("should be entity_1 has id_1", function () {
-            expect(entity_1.getIdentity()).to.equals(id_1);
+        it("should be entity1 has id1", function () {
+            expect(entity1.getIdentity()).to.equals(id1);
         });
 
-        it("should be entity_1 equals to entity_1", function () {
-            expect(entity_1.equals(entity_1)).to.be.true;
+        it("should be entity1 equals to entity1", function () {
+            expect(entity1.equals(entity1)).to.be.true;
         });
 
-        it("should be entity_1 not equals to entity_2", function () {
-            expect(entity_1.equals(entity_2)).to.not.be.true;
+        it("should be entity1 not equals to entity2", function () {
+            expect(entity1.equals(entity2)).to.not.be.true;
         });
     });
 })(DDD || (DDD = {}));
@@ -61,14 +57,9 @@
     var expect = chai.expect;
 
     describe("Identity", function () {
-        it("should be string identity has `id_hoge`", function () {
-            var stringIdentity = new DDD.Identity('id_hoge');
-            expect(stringIdentity.getValue()).be.equal('id_hoge');
-        });
-
-        it("should be number identity has `123`", function () {
-            var numberIdentity = new DDD.Identity(123);
-            expect(numberIdentity.getIdentity()).be.equal(123);
+        it("should be identity has `id_hoge`", function () {
+            var identity = new DDD.Identity('id_hoge');
+            expect(identity.getValue()).be.equal('id_hoge');
         });
     });
 })(DDD || (DDD = {}));
@@ -108,7 +99,7 @@ var DDD;
         var pokemon_2 = new Pokemon(id_002);
 
         it("should be pokemon_1 has id_001", function () {
-            expect(pokemon_1.getIdentity()).to.equals(id_001);
+            expect(pokemon_1.getIdentity().getValue()).to.equals(id_001.getValue());
         });
 
         it("should be pokemon_1 equals to pokemon_1", function () {

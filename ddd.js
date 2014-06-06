@@ -22,10 +22,6 @@
             this.value = value;
         }
         Identity.prototype.getValue = function () {
-            return this.value.toString();
-        };
-
-        Identity.prototype.getIdentity = function () {
             return this.value;
         };
         return Identity;
