@@ -1,44 +1,34 @@
 module.exports = (grunt)->
+
+  grunt.loadNpmTasks('grunt-typescript')
+  grunt.loadNpmTasks('grunt-contrib-watch')
+  grunt.loadNpmTasks('grunt-contrib-clean')
+
+  grunt.registerTask('default', ['clean', 'typescript'])
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json')
 
-    uglify:
-      typesc:
-        files: 'ddd.min.js': ['ddd.js']
-
-    concat:
-      dest:
-        src: ['src/**/*.js']
-        dest: 'ddd.js'
-
-      test:
-        src: ['ddd.js', 'tests/**/*.js']
-        dest: 'ddd-test.js'
-
-      options:
-        separator: ';'
-
     typescript:
       base:
-        src: ['src/**/*.ts', 'tests/**/*.ts']
+        src: ['src/**/*.ts']
+        dest: 'ddd.js'
         options:
-          sourceMap: false
+          sourceMap: true
+
+      test:
+        src: ['tests/**/*.ts']
+        dest: 'ddd-spec.js'
+        options:
+          sourceMap: true
 
     watch:
       typescript:
         files: ['src/**/*.ts', 'tests/**/*.ts']
-        tasks: ['typescript', 'concat', 'uglify', 'clean']
+        tasks: ['clean', 'typescript']
         options:
           atBegin: true
 
     clean: ['src/**/*.js', 'tests/**/*.js']
 
   })
-
-  grunt.loadNpmTasks('grunt-typescript')
-  grunt.loadNpmTasks('grunt-contrib-concat')
-  grunt.loadNpmTasks('grunt-contrib-uglify')
-  grunt.loadNpmTasks('grunt-contrib-watch')
-  grunt.loadNpmTasks('grunt-contrib-clean')
-
-  grunt.registerTask('default', ['typescript', 'concat', 'uglify', 'clean'])
