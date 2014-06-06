@@ -1,16 +1,12 @@
+/// <reference path="identity-interface.ts" />
+
 module DDD {
 
-    export class Identity<T> {
+    export class Identity implements IIdentity {
 
-        constructor(
-            private value: T
-        ) {}
+        constructor(private value: string) {}
 
         getValue(): string {
-            return this.value.toString();
-        }
-
-        getIdentity(): T {
             return this.value;
         }
 

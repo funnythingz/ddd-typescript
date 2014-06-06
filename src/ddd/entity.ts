@@ -2,19 +2,18 @@
 
 module DDD {
 
-    export class Entity<ID extends Identity<any>> {
+    export class Entity<ID extends Identity> implements IEntity<IIdentity> {
 
-        constructor(
-            private identity: ID
-        ) {}
+        constructor(private identity: ID) {}
 
         getIdentity(): ID {
             return this.identity;
         }
 
         equals(other: Entity<ID>): boolean {
-            return this.getIdentity() === other.getIdentity()
+            return this.getIdentity() === other.getIdentity();
         }
+
     }
 
 }

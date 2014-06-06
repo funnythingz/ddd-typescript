@@ -2,9 +2,9 @@
 
 module DDD {
 
-    export interface IEntity<T extends IEntity<T>> {
+    export interface IEntity<T extends IIdentity> {
 
-        getIdentity(): Identity<T>;
+        getIdentity(): T;
 
         equals(other: IEntity<T>): boolean;
 

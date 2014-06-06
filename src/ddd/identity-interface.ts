@@ -1,10 +1,8 @@
 module DDD {
 
-    export interface IIdentity<T extends IIdentity<T>> {
+    export interface IIdentity {
 
         getValue(): string;
-
-        getIdentity(): T;
 
     }
 
