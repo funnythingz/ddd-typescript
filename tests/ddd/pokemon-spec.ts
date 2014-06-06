@@ -8,15 +8,15 @@ module DDD {
 
     var expect = chai.expect;
 
-    export class Pokemon extends Entity<Identity<string>> {
+    export class Pokemon extends Entity<PokemonID> {
 
-        constructor(identity: Identity<string>) {
+        constructor(identity: Identity) {
             super(identity);
         }
 
     }
 
-    export class PokemonID extends Identity<string> {
+    export class PokemonID extends Identity {
 
         constructor(value: string) {
             super(value);
@@ -33,7 +33,7 @@ module DDD {
         var pokemon_2: Pokemon = new Pokemon(id_002);
 
         it("should be pokemon_1 has id_001", function() {
-            expect(pokemon_1.getIdentity()).to.equals(id_001);
+            expect(pokemon_1.getIdentity().getValue()).to.equals(id_001.getValue());
         });
 
         it("should be pokemon_1 equals to pokemon_1", function() {

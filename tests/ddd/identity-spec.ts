@@ -9,16 +9,10 @@ module DDD {
 
     describe("Identity", function() {
 
-        it("should be string identity has `id_hoge`", function() {
-            var stringIdentity: Identity<string> = new Identity<string>('id_hoge');
-            expect(stringIdentity.getValue()).be.equal('id_hoge');
+        it("should be identity has `id_hoge`", function() {
+            var identity: Identity = new Identity('id_hoge');
+            expect(identity.getValue()).be.equal('id_hoge');
         });
-
-        it("should be number identity has `123`", function() {
-            var numberIdentity: Identity<number> = new Identity<number>(123);
-            expect(numberIdentity.getIdentity()).be.equal(123);
-        });
-
 
     });
 

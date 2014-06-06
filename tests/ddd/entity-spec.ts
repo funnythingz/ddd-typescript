@@ -10,22 +10,22 @@ module DDD {
 
     describe("Entity", function() {
 
-        var id_1: Identity<number> = new Identity(1);
-        var id_2: Identity<number> = new Identity(2);
+        var id1: Identity = new Identity('id1');
+        var id2: Identity = new Identity('id2');
 
-        var entity_1: Entity<Identity<number>> = new Entity(id_1);
-        var entity_2: Entity<Identity<number>> = new Entity(id_2);
+        var entity1: Entity<Identity> = new Entity(id1);
+        var entity2: Entity<Identity> = new Entity(id2);
 
-        it("should be entity_1 has id_1", function() {
-            expect(entity_1.getIdentity()).to.equals(id_1);
+        it("should be entity1 has id1", function() {
+            expect(entity1.getIdentity()).to.equals(id1);
         });
 
-        it("should be entity_1 equals to entity_1", function() {
-            expect(entity_1.equals(entity_1)).to.be.true;
+        it("should be entity1 equals to entity1", function() {
+            expect(entity1.equals(entity1)).to.be.true;
         });
 
-        it("should be entity_1 not equals to entity_2", function() {
-            expect(entity_1.equals(entity_2)).to.not.be.true;
+        it("should be entity1 not equals to entity2", function() {
+            expect(entity1.equals(entity2)).to.not.be.true;
         });
 
     });
